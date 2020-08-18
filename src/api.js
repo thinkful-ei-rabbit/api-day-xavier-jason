@@ -1,7 +1,8 @@
 export default {
   getItems,
   createItem,
-  updateItem
+  updateItem,
+  deleteItem
 };
 
 const BASE_URL = 'https://thinkful-list-api.herokuapp.com/xavier-jason';
@@ -17,7 +18,10 @@ function createItem(name) {
 }
 
 function updateItem(id, obj) {
-    let newItem = JSON.stringify(obj);
-   return fetch(`${BASE_URL}/items/${id}`, {method:'PATCH',headers:{'Content-Type': 'application/json'}, body: newItem});
+  let newItem = JSON.stringify(obj);
+  return fetch(`${BASE_URL}/items/${id}`, {method:'PATCH',headers:{'Content-Type': 'application/json'}, body: newItem});
 }
 
+function deleteItem(id) {
+  return fetch(`${BASE_URL}/items/${id}`, {method:'DELETE'});
+}
