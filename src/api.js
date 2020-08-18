@@ -6,7 +6,7 @@ export default {
 const BASE_URL = 'https://thinkful-list-api.herokuapp.com/xavier-jason';
 
 function getItems() {
-    return fetch(`${BASE_URL}/items`);
+  return fetch(`${BASE_URL}/items`);
 }
 
 function createItem(name) {
